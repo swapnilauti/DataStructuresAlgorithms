@@ -1,4 +1,9 @@
 def lis(arr):
+    """
+    :param arr: list of integers
+    :return: list of same dimensions as that of arr, where integer at every index represents
+    a number of elements befor index, smaller than the element at that index in arr
+    """
     ret = [1]
     for i in range(1,len(arr)):
         max=0
@@ -9,6 +14,11 @@ def lis(arr):
     return ret
 
 def lds(arr):
+    """
+    :param arr: list of integers
+    :return: list of same dimensions as that of arr, where integer at every index represents
+    a number of elements after index, greater than the element at that index in arr
+    """
     ret = [1]*len(arr)
     for i in range(len(arr)-2,-1,-1):
         max=0
@@ -19,6 +29,10 @@ def lds(arr):
     return ret
 
 def bitonic(arr):
+    """
+    :param arr: list of numbers
+    :return: length of longest bitonic subsequence for arr
+    """
     l1 = lis(arr)
     l2 = lds(arr)
     max = 0
